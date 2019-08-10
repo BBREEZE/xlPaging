@@ -11,7 +11,7 @@
    简单模式
    ```
         $("#page").paging({
-            pageNum: 7, //要展示的页码数量
+            pageNum: 7, //所有页码的数量
             callback: function (num) { //回调函数,num为当前页码
                 console.log(num);
             }
@@ -31,13 +31,14 @@
 4. 对分页进行个性化
    ```
         <style>
+		//#page 的page是您自定义的id
         #page {
             margin: 20px auto;
             color: #666;
             display: block;
             text-align: center;
         }
-
+		//所有li的样式
         #page li {
             display: inline-block;
             min-width: 30px;
@@ -54,18 +55,18 @@
             -moz-appearance: none;
             appearance: none;
         }
-
+		//上一页和下一页的样式
         .xl-nextPage,.xl-prevPage {
             width: 60px;
             color: #0073A9;
             height: 28px;
         }
-
+		//失效状态样式
         #page li.xl-disabled {
             opacity: .5;
             cursor: no-drop;
         }
-
+		//当前页码显示状态
         #page li.xl-active {
             background-color: #0073A9;
             border-color: #0073A9;
