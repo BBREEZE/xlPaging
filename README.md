@@ -1,5 +1,11 @@
 # xlPaging
 一个简单的分页插件，支持ajax
+
+# 效果展示
+![](README_files/1.jpg)
+![](README_files/2.jpg)
+![](README_files/3.jpg)
+![](README_files/4.jpg)
 # 使用方法
 
 1. 下载并引入JQuery和xlPaging.js
@@ -11,7 +17,7 @@
    简单模式
    ```
         $("#page").paging({
-            pageNum: 7, //所有页码的数量
+            pageNum: 7, //总页码
             callback: function (num) { //回调函数,num为当前页码
                 console.log(num);
             }
@@ -20,9 +26,9 @@
     高级模式
     ```
         $("#page").paging({
-            nowPage: 1, // 当前页码
+            nowPage: 1, // 当前页码,默认为1
             pageNum: 20, // 总页码
-            buttonNum: 6, //要展示的页码数量
+            buttonNum: 7, //要展示的页码数量，默认为7，若小于5则为5
             callback: function (num) { //回调函数,num为当前页码
                 console.log(num);
             }
