@@ -11,7 +11,7 @@
    简单模式
    ```
         $("#page").paging({
-            buttonNum: 6, //要展示的页码数量
+            pageNum: 7, //要展示的页码数量
             callback: function (num) { //回调函数,num为当前页码
                 console.log(num);
             }
