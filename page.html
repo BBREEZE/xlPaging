@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>分页插件-xiaoluo</title>
+    <style>
+        #page {
+            margin: 20px auto;
+            color: #666;
+            display: block;
+            text-align: center;
+        }
+
+        #page li {
+            display: inline-block;
+            min-width: 30px;
+            height: 28px;
+            cursor: pointer;
+            color: #666;
+            font-size: 13px;
+            line-height: 28px;
+            background-color: #f9f9f9;
+            border: 1px solid #dce0e0;
+            text-align: center;
+            margin: 0 4px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        .xl-nextPage,
+        .xl-prevPage {
+            width: 60px;
+            color: #0073A9;
+            height: 28px;
+        }
+
+        #page li.xl-disabled {
+            opacity: .5;
+            cursor: no-drop;
+        }
+
+        #page li.xl-active {
+            background-color: #0073A9;
+            border-color: #0073A9;
+            color: #FFF
+        }
+    </style>
+</head>
+
+<body ontouchstart="" onmousemove="">
+    <div id="page"></div>
+</body>
+<script src="jquery.min.js"></script>
+<script type="text/javascript" src="xlPaging.js"></script>
+<script>
+    // xlPaging.js 使用方法
+    $("#page").paging({
+        nowPage: 1, // 当前页码
+        pageNum: 20, // 总页码
+        buttonNum: 6, //要展示的页码数量
+        callback: function (num) { //回调函数
+            console.log(num);
+        }
+    });
+</script>
+
+</html>
