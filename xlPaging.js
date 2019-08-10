@@ -5,7 +5,7 @@
         this.options = {
             nowPage: options.nowPage || 1, // 当前页码
             pageNum: options.pageNum, // 总页码
-            buttonNum: (options.buttonNum>=3?options.buttonNum:3) || 7,// 页面显示页码数量
+            buttonNum: (options.buttonNum>=5?options.buttonNum:5) || 7,// 页面显示页码数量
             callback: options.callback // 回调函数
         };
         this.init();

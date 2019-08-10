@@ -5,7 +5,7 @@
 ![](README_files/1.jpg)
 ![](README_files/2.jpg)
 ![](README_files/3.jpg)
-![](README_files/4.jpg)
+![](README_files/5.jpg)
 # 使用方法
 
 1. 下载并引入JQuery和xlPaging.js
