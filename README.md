@@ -29,6 +29,8 @@
             nowPage: 1, // 当前页码,默认为1
             pageNum: 20, // 总页码
             buttonNum: 7, //要展示的页码数量，默认为7，若小于5则为5
+			canJump: 1,// 是否能跳转。0=不显示（默认），1=显示
+			showOne: 0,//只有一页时，是否显示。0=不显示,1=显示（默认）
             callback: function (num) { //回调函数,num为当前页码
                 console.log(num);
             }
@@ -78,7 +80,100 @@
             border-color: #0073A9;
             color: #FFF
         }
+		//跳转文字
+		 #page li.xl-jumpText {
+		    background-color: rgba(0,0,0,0);
+			border-color: rgba(0,0,0,0);
+			opacity: 1;
+		}
+		//跳转按钮
+		#page li.xl-jumpButton{
+			padding: 0 5px;
+		}
     </style>
+	// 样例中的样式
+	<style>
+		#page {
+		    margin: 20px auto;
+		    color: #666;
+		    display: block;
+		    text-align: center;
+		}
+		
+		#page li {
+		    display: inline-block;
+		    min-width: 30px;
+		    height: 28px;
+		    cursor: pointer;
+		    color: #666;
+		    font-size: 13px;
+		    line-height: 28px;
+		    background-color: #f9f9f9;
+		    border: 1px solid #dce0e0;
+		    text-align: center;
+		    margin: 0 4px;
+		    -webkit-appearance: none;
+		    -moz-appearance: none;
+		    appearance: none;
+		}
+		
+		.xl-nextPage,
+		.xl-prevPage {
+		    width: 60px;
+		    color: #0073A9;
+		    height: 28px;
+		}
+		
+		#page li.xl-disabled {
+		    opacity: .5;
+		    cursor: no-drop;
+		}
+		
+		#page li.xl-disabled:hover{
+			background-color: #f9f9f9 !important;
+		    border: 1px solid #dce0e0 !important;
+			color: #666 !important;
+		}
+		
+		#page li.xl-active {
+		    background-color: #0073A9;
+		    border-color: #0073A9;
+		    color: #FFF
+		}
+		
+		#page li:hover{
+			background-color: #0073A9 !important;
+		    border-color: #0073A9;
+		    color: #FFF
+		}
+		
+		 #page li.xl-jumpText {
+		    background-color: rgba(0,0,0,0);
+			border-color: rgba(0,0,0,0);
+			opacity: 1;
+		}
+		
+		#page li.xl-jumpText:hover{
+			background-color: rgba(0,0,0,0) !important;
+			border-color: rgba(0,0,0,0) !important;
+		}
+		
+		#page li.xl-jumpButton{
+			padding: 0 5px;
+		}
+		
+		#xlJumpNum {
+			width: 35px;
+			margin: 0 3px;
+		}
+		input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{
+			-webkit-appearance: none !important;
+		}
+		input[type="number"]{
+			-moz-appearance:textfield;
+		}
+	</style>
+	
    ```
 
 # 分页结构
@@ -93,6 +188,8 @@
             <li>19</li>
             <li class="xl-active">20</li>
             <li class="xl-nextPage xl-disabled">下一页</li>
+			<li class="xl-jumpText xl-disabled">跳转到<input type="number" id="xlJumpNum">页</li>
+			<li class="xl-jumpButton">确定</li>
         </ul>
     </div>
 ```

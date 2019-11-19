@@ -5,6 +5,8 @@
         this.options = {
             nowPage: options.nowPage || 1, // 当前页码
             pageNum: options.pageNum, // 总页码
+			canJump: options.canJump || 0, // 是否能跳转。0=不显示（默认），1=显示
+			showOne: options.showOne || 1,//只有一页时，是否显示。0=不显示,1=显示（默认）
             buttonNum: (options.buttonNum>=5?options.buttonNum:5) || 7,// 页面显示页码数量
             callback: options.callback // 回调函数
         };
@@ -22,7 +24,16 @@
             var nowPage = this.options.nowPage;
             var pageNum = this.options.pageNum;
             var buttonNum = this.options.buttonNum;
+			var canJump = this.options.canJump;
+			var showOne = this.options.showOne;
             var content = [];
+			//对nowPage进行判断
+			nowPage = nowPage > pageNum ? pageNum : nowPage;
+			nowPage = nowPage < 1 ? 1 : nowPage;
+			//如果只有一页并且设置为不显示，则不进行渲染
+			if(showOne && pageNum === 1){
+				return '';
+			}
             content.push("<ul>");
             content.push("<li class='xl-prevPage'>上一页</li>");
             //页面总数小于等于当前要展示页数总数，展示所有页面
@@ -92,6 +103,10 @@
                 }
             }
             content.push("<li class='xl-nextPage'>下一页</li>");
+			if(canJump){
+				content.push("<li class='xl-jumpText xl-disabled'>跳转到<input type='number' id='xlJumpNum'>页</li>");
+				content.push("<li class='xl-jumpButton'>确定</li>");
+			}
             content.push("</ul>");
             me.element.html(content.join(''));
              // DOM重新生成后每次调用是否禁用button
@@ -107,8 +122,8 @@
                 var cla = $(this).attr('class');
                 var num = parseInt($(this).html());
                 var nowPage = me.options.nowPage;
-                if( $(this).hasClass('xl-disabled')){
-                    return ;
+                if( $(this).hasClass('xl-disabled') || cla === 'xl-jumpText'){
+                    return '';
                 }
                 if (cla === 'xl-prevPage') {
                     if (nowPage !== 1) {
@@ -118,9 +133,11 @@
                     if (nowPage !== me.options.pageNum) {
                         me.options.nowPage += 1;
                     }
-                }else {
-                    me.options.nowPage = num;
-                }
+                }else if(cla === 'xl-jumpButton'){
+                    me.options.nowPage = Number($('#xlJumpNum').val());
+                }else{
+					me.options.nowPage = num;
+				}
                 me.createHtml();
                 if (me.options.callback) {
                     me.options.callback(me.options.nowPage);
