@@ -38,6 +38,7 @@
 			}
 			//如果只有一页并且设置为不显示，则不进行渲染
 			if(!showOne && pageNum === 1){
+				me.element.html('');
 				return '';
 			}
             content.push("<ul>");
