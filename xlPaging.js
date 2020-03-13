@@ -140,7 +140,7 @@
                         me.options.nowPage += 1;
                     }
                 }else if(cla === 'xl-jumpButton'){
-                    me.options.nowPage = Number($('#xlJumpNum').val());
+                                        me.options.nowPage = Number($('#xlJumpNum').val()) > me.options.pageNum ? me.options.pageNum : Number($('#xlJumpNum').val());
                 }else{
 					me.options.nowPage = num;
 				}
