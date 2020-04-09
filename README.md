@@ -8,7 +8,7 @@
 ![](README_files/5.jpg)
 # 使用方法
 
-1. 下载并引入JQuery和xlPaging.js
+1. ~~下载并引入JQuery和xlPaging.js~~ 下载并引入xlPaging.js
 2. 在页面中增加一个盛放分页的DIV
     ```
          <div id="page"></div>
@@ -16,29 +16,29 @@
 3. 在JS中对分页进行配置,其中pageNum为必写项。
    简单模式
    ```
-        $("#page").paging({
-            pageNum: 7, //总页码
-            callback: function (num) { //回调函数,num为当前页码
-                console.log(num);
-            }
-        });
+			let xlPaging =new Paging('page', {
+				pageNum: 100, // 总页码
+				callback: function (num) { //回调函数
+					console.log(num);
+				}
+			})
     ```
     高级模式
     ```
-        $("#page").paging({
-            nowPage: 1, // 当前页码,默认为1
-            pageNum: 20, // 总页码
-            buttonNum: 7, //要展示的页码数量，默认为7，若小于5则为5
-			canJump: 1,// 是否能跳转。0=不显示（默认），1=显示
-			showOne: 0,//只有一页时，是否显示。0=不显示,1=显示（默认）
-            callback: function (num) { //回调函数,num为当前页码
-                console.log(num);
-            }
-        });
+			let xlPaging =new Paging('page', {
+				nowPage: 6, // 当前页码
+				pageNum: 100, // 总页码
+				buttonNum: 5, //要展示的页码数量
+				canJump: 1,// 是否能跳转。0=不显示（默认），1=显示
+				showOne: 1,//只有一页时，是否显示。0=不显示,1=显示（默认）
+				callback: function (num) { //回调函数
+					console.log(num);
+				}
+			})
     ```
 4. 对分页进行个性化
    ```
-        <style>
+	<style>
 		//#page 的page是您自定义的id
         #page {
             margin: 20px auto;
@@ -198,4 +198,5 @@
 
 # 下一步计划
 1. 增加多种样式
-2. 去JQuery
+2. ~~去JQuery~~
+3. 使用虚拟dom提高性能
