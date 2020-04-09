@@ -1,63 +1,65 @@
 # xlPaging
 
-一个简单的分页插件，支持ajax，可以自定义展示数量
+A simple paging, support ajax, support custom display page number.
 
-## 效果展示
+## Effect display
 
 ![img](README_files/1.jpg)
 ![img](README_files/2.jpg)
 ![img](README_files/3.jpg)
 ![img](README_files/5.jpg)
 
-## 使用方法
+## How to use
 
-1. ~~下载并引入JQuery和xlPaging.js~~ 下载并引入xlPaging.js
-2. 在页面中增加一个盛放分页的DIV
+1. Download and import `xlPaging.js`
+
+2. Place a div in page where to place the paging
 
     ``` javascript
          <div id="page"></div>
     ```
 
-3. 在JS中对分页进行配置,其中pageNum为必写项。
-   简单模式
+3. Config the paging plugin, `pageNum` is required.
+
+   3.1  Simple Example
 
    ```javascript
     let xlPaging =new Paging('page', {
-      pageNum: 100, // 总页码
-      callback: function (num) { //回调函数
+      pageNum: 100, // Total number of paging
+      callback: function (num) { //click to do, num is clicked paging number
         console.log(num);
       }
     })
     ```
 
-    高级模式
+    3.2 Advanced example
 
     ```javascript
     let xlPaging =new Paging('page', {
-      nowPage: 6, // 当前页码
-      pageNum: 100, // 总页码
-      buttonNum: 5, //要展示的页码数量
-      canJump: 1,// 是否能跳转。0=不显示（默认），1=显示
-      showOne: 1,//只有一页时，是否显示。0=不显示,1=显示（默认）
-      callback: function (num) { //回调函数
+      nowPage: 6, // Page number of now
+      pageNum: 100, // Total number of paging
+      buttonNum: 5, // How many button would you like to show
+      canJump: 1,// Would you like to show the jump button? 0=not show(default),1=show
+      showOne: 1,// If only one page, would you like to show the paging? 0=not show,1=show(default)
+      callback: function (num) { //click to do, num is clicked paging number
         console.log(num);
       }
     })
     ```
 
-4. 对分页进行个性化
+4. Cutsom the css
 
   ``` javascript
 
   <style>
-    //#page 的page是您自定义的id
+    //#page page is your custom id
         #page {
             margin: 20px auto;
             color: #666;
             display: block;
             text-align: center;
         }
-    //所有li的样式
+    // all li css
         #page li {
             display: inline-block;
             min-width: 30px;
@@ -74,35 +76,35 @@
             -moz-appearance: none;
             appearance: none;
         }
-    //上一页和下一页的样式
+    //prev and next button css
         .xl-nextPage,.xl-prevPage {
             width: 60px;
             color: #0073A9;
             height: 28px;
         }
-    //失效状态样式
+    //disable button css
         #page li.xl-disabled {
             opacity: .5;
             cursor: no-drop;
         }
-    //当前页码显示状态
+    //active button css
         #page li.xl-active {
             background-color: #0073A9;
             border-color: #0073A9;
             color: #FFF
         }
-    //跳转文字
-     #page li.xl-jumpText {
-        background-color: rgba(0,0,0,0);
-        border-color: rgba(0,0,0,0);
-        opacity: 1;
+    //jump text button css
+       #page li.xl-jumpText {
+          background-color: rgba(0,0,0,0);
+          border-color: rgba(0,0,0,0);
+          opacity: 1;
+        }
+    //jump button css
+      #page li.xl-jumpButton{
+        padding: 0 5px;
       }
-    //跳转按钮
-    #page li.xl-jumpButton{
-      padding: 0 5px;
-    }
     </style>
-  // 样例中的样式
+  // Css Example
 
   <style>
 
@@ -189,7 +191,9 @@
 
   ```
 
-## 分页结构
+## Paging Structure
+
+There is a bug, that we can't change the text in paging, we will fix it in next version, we can change the text by config the paging.
 
 ```javascript
     <div id="page">
@@ -208,12 +212,13 @@
     </div>
 ```
 
-## 交流QQ群725227425
+## QQ Group:725227425
 
-1. 可以交流一下前端技术
+1. Report the bugs
+2. Communicate web technology
 
-## 下一步计划
+## To do
 
-1. 增加多种样式
-2. ~~去JQuery~~
-3. 使用虚拟dom提高性能
+1. Add more style to choose
+2. ~~Delete JQuery~~
+3. Using virtual DOM to improve performance
