@@ -91,20 +91,18 @@
 <body>
     <div id="page"></div>
 </body>
-<script src="jquery.min.js"></script>
 <script type="text/javascript" src="xlPaging.js"></script>
 <script>
-    // xlPaging.js 使用方法
-    $("#page").paging({
+    let a =new Paging('page', {
         nowPage: 6, // 当前页码
-        pageNum: 1, // 总页码
-        buttonNum: 6, //要展示的页码数量
+        pageNum: 100, // 总页码
+        buttonNum: 5, //要展示的页码数量
 		canJump: 1,// 是否能跳转。0=不显示（默认），1=显示
 		showOne: 1,//只有一页时，是否显示。0=不显示,1=显示（默认）
         callback: function (num) { //回调函数
             console.log(num);
         }
-    });
+    })
 </script>
 
 </html>
