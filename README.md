@@ -2,6 +2,8 @@
 
 A simple paging, support ajax, support custom display page number.
 
+[中文文档]( README_zh.md "xlPaging")
+
 ## Effect display
 
 ![img](README_files/1.jpg)
