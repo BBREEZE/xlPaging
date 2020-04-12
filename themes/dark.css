@@ -65,9 +65,10 @@
     border-color:#FFF;
     color: #FFF;
 }
-
-#page li:last-child:hover,
-#page li:first-child:hover
+/* 清除上一页下一页和后边跳转的确定的下划线 */
+#page li.xl-nextPage:hover,
+#page li.xl-prevPage:hover,
+#page li:last-child:hover
 {
     /* color: red; */
     border-width: 0 0 0px;

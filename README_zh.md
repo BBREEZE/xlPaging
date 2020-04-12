@@ -28,7 +28,7 @@
         console.log(num);
       }
     })
-    ```
+   ```
 
     高级模式
 
@@ -214,6 +214,19 @@
 
 ## 下一步计划
 
-1. 增加多种样式
+1. 增加多种样式（1/x）
 2. ~~去JQuery~~
 3. 使用虚拟dom提高性能
+
+## 增加一个主题《dark》
+
+### 介绍
+
+主题保存在themes文件夹中，这个灵感主要是想着考虑到黑色背景的网页。
+
+### 使用方法
+
+1. 下载themes文件夹。
+2. 删除page.html中的style内容。
+3. 在page.html中引入css。`<link rel="stylesheet" href="themes/dark.css">`
+4. 打开page.html即可预览。
