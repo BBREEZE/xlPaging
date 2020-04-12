@@ -1,0 +1,115 @@
+#page {
+    margin: 20px auto;
+    /* color: rgb(151, 29, 29); */
+    background-color: rgb(46, 37, 42);
+    display: block;
+    text-align: center;
+}
+
+#page li {
+    display: inline-block;
+    min-width: 30px;
+   
+    height: 22px;
+    cursor: pointer;
+    color: rgba(205, 203, 204, 0.7);
+    /* font: 900 13px "Microsoft YaHei";
+     */
+    font-family: "Microsoft YaHei";
+    font-weight: 900;
+    font-size: 13px;
+   
+    /* background-color: rgb(46, 37, 22); */
+    /* border: 1px solid #dce0e0; */
+    text-align: center;
+    margin: 0 4px;
+    /* -webkit-appearance: none; */
+    /* -moz-appearance: none; */
+    /* appearance: none; */
+}
+
+.xl-nextPage,
+.xl-prevPage {
+    width: 60px;
+    color: rgb(205, 202, 205);
+    height: 28px;
+}
+
+
+#page li.xl-disabled {
+    opacity: .5;
+    cursor: no-drop;
+}
+
+#page li.xl-disabled:hover{
+    background-color: rgb(60, 54, 58, 0.5) !important;
+    /* border: 1px solid #dce0e0 !important; */
+    color: #666 !important;
+}
+
+#page li.xl-active {
+    /* background-color: rgb(46, 37, 42) ; */
+    border-width: 0 0 2px;
+    border-style: solid;
+    border-color:#FFF;
+    color: #FFF;
+    margin:5px  0 3px ;
+}
+
+#page li:hover{
+    background-color:  rgb(46, 37, 42)  !important;
+    /* border-color: #0073A9; */
+    border-width: 0 0 2px;
+    /* margin: 0 -10px 0 ; */
+    border-style: solid;
+    border-color:#FFF;
+    color: #FFF;
+}
+
+#page li:last-child:hover,
+#page li:first-child:hover
+{
+    /* color: red; */
+    border-width: 0 0 0px;
+
+}
+
+ #page li.xl-jumpText {
+    background-color:  rgb(46, 37, 42) ;
+    border-color:  rgb(46, 37, 42) ;
+    opacity: 1;
+}
+#page li.xl-jumpText input{
+    background-color: rgba(46,37,42,0.5);
+    border: 1px rgba(255,255,255,0.5) solid;
+    border-radius: 25%;
+    color: #FFF;
+    outline:none;
+    padding: 0 2px;
+}
+#page li.xl-jumpText:hover{
+    color: #FFF !important;
+    /* border-color: #FFF !important; */
+    
+}
+#page li.xl-jumpText input:hover{
+    color: #FFF !important;
+    border: 1px rgba(255,255,255,1) solid;
+    
+}
+
+#page li.xl-jumpButton{
+    padding: 0 5px;
+    
+}
+
+#xlJumpNum {
+    width: 35px;
+    margin: 0 3px;
+}
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+}
+input[type="number"]{
+    -moz-appearance:textfield;
+}
